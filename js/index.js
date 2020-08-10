@@ -1,65 +1,68 @@
 import users from './users.js';
 
-/**
- * task -01
- * Получить массив имен всех пользователей (поле name).
- */
+// /**
+//  * task -01
+//  * Получить массив имен всех пользователей (поле name).
+//  */
 
-const getUserNames = users => {
-  return users.map(user => user.name);
-};
-console.log(getUserNames(users));
-[
-  'Moore Hensley',
-  'Sharlene Bush',
-  'Ross Vazquez',
-  'Elma Head',
-  'Carey Barr',
-  'Blackburn Dotson',
-  'Sheree Anthony',
-];
+// const getUserNames = users => {
+//   return users.map(user => user.name);
+// };
+// console.log(getUserNames(users));
+// [
+//   'Moore Hensley',
+//   'Sharlene Bush',
+//   'Ross Vazquez',
+//   'Elma Head',
+//   'Carey Barr',
+//   'Blackburn Dotson',
+//   'Sheree Anthony',
+// ];
 
-/**
- * task -02
- * Получить массив объектов пользователей по цвету глаз (поле eyeColor).
- */
+// /**
+//  * task -02
+//  * Получить массив объектов пользователей по цвету глаз (поле eyeColor).
+//  */
 
-const getUsersWithEyeColor = (users, color) => {
-  return users.filter(user => user.eyeColor === color);
-};
+// const getUsersWithEyeColor = (users, color) => {
+//   return users.filter(user => user.eyeColor === color);
+// };
 
-console.log(getUsersWithEyeColor(users, 'blue'));
-// [объект Moore Hensley, объект Sharlene Bush, объект Carey Barr]
+// console.log(getUsersWithEyeColor(users, 'blue'));
+// // [объект Moore Hensley, объект Sharlene Bush, объект Carey Barr]
 
-/**
- * task -03
- * Получить массив имен пользователей по полу(поле gender).
- */
+// /**
+//  * task -03
+//  * Получить массив имен пользователей по полу(поле gender).
+//  */
 
-const getUsersWithGender = (users, gender) => {
-  const userGender = users.filter(user => user.gender === gender);
-  return userGender.map(user => user.name);
-};
+// const getUsersWithGender = (users, gender) => {
+//   const userGender = users.filter(user => user.gender === gender);
+//   return userGender.map(user => user.name);
+// };
 
-console.log(getUsersWithGender(users, 'male'));
-// [ 'Moore Hensley', 'Ross Vazquez', 'Carey Barr', 'Blackburn Dotson' ]
+// console.log(getUsersWithGender(users, 'male'));
+// // [ 'Moore Hensley', 'Ross Vazquez', 'Carey Barr', 'Blackburn Dotson' ]
 
 /**
  * task -04
+ *
+ *  Получить массив только неактивных пользователей(поле isActive).
+ *
  */
 
-// Получить массив только неактивных пользователей(поле isActive).
+const getInactiveUsers = users => {
+  return users.filter(user => user.isActive === false);
+};
 
-// const getInactiveUsers = users => {
-//     // твой код
-// };
+console.log(getInactiveUsers(users));
 
-// console.log(getInactiveUsers(users));
-
-// // [объект Moore Hensley, объект Ross Vazquez, объект Blackburn Dotson]
+// [объект Moore Hensley, объект Ross Vazquez, объект Blackburn Dotson]
 
 /**
  * task -05
+ *  Получить пользоваля (не массив) по email (поле email, он уникальный).
+ *
  */
 
 // const getUserWithEmail = (users, email) => {
@@ -73,6 +76,9 @@ console.log(getUsersWithGender(users, 'male'));
 
 /**
  * task -06
+ * Получить массив пользователей попадающих в возрастную категорию
+ * от min до max лет (поле age).
+ *
  */
 
 // const getUsersWithAge = (users, min, max) => {
@@ -87,20 +93,20 @@ console.log(getUsersWithGender(users, 'male'));
 
 /**
  * task -07
+ * Получить общую сумму баланса (поле balance) всех пользователей.
  */
-
-// Получить общую сумму баланса(поле balance) всех пользователей.
 
 // const calculateTotalBalance = users => {
 //     // твой код
 // };
 
 // console.log(calculateTotalBalance(users)); // 20916
+
 /**
  * task -08
+ * Массив имен всех пользователей у которых есть друг с указанным именем.
+ *
  */
-
-// Массив имен всех пользователей у которых есть друг с указанным именем.
 
 // const getUsersWithFriend = (users, friendName) => {
 //     // твой код
@@ -111,9 +117,9 @@ console.log(getUsersWithGender(users, 'male'));
 
 /**
  * task -09
+ * Массив имен (поле name) людей, отсортированных
+ * в зависимости от количества их друзей (поле friends)
  */
-
-// Массив имен(поле name) людей, отсортированных в зависимости от количества их друзей(поле friends)
 
 // const getNamesSortedByFriendsCount = users => {
 //     // твой код
@@ -124,8 +130,9 @@ console.log(getUsersWithGender(users, 'male'));
 
 /**
  * task -10
+ * Получить массив всех умений всех пользователей(поле skills), при этом не должно
+ * быть повторяющихся умений и они должны быть отсортированы в алфавитном порядке.
  */
-// Получить массив всех умений всех пользователей(поле skills), при этом не должно быть повторяющихся умений и они должны быть отсортированы в алфавитном порядке.
 
 // const getSortedUniqueSkills = users => {
 //     // твой код
