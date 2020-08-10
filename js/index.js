@@ -1,9 +1,9 @@
 import users from './users.js';
 
-// /**
-//  * task -01
-//  * Получить массив имен всех пользователей (поле name).
-//  */
+/**
+ * task -01
+ * Получить массив имен всех пользователей (поле name).
+ */
 
 // const getUserNames = users => {
 //   return users.map(user => user.name);
@@ -19,10 +19,10 @@ import users from './users.js';
 //   'Sheree Anthony',
 // ];
 
-// /**
-//  * task -02
-//  * Получить массив объектов пользователей по цвету глаз (поле eyeColor).
-//  */
+/**
+ * task -02
+ * Получить массив объектов пользователей по цвету глаз (поле eyeColor).
+ */
 
 // const getUsersWithEyeColor = (users, color) => {
 //   return users.filter(user => user.eyeColor === color);
@@ -31,10 +31,10 @@ import users from './users.js';
 // console.log(getUsersWithEyeColor(users, 'blue'));
 // // [объект Moore Hensley, объект Sharlene Bush, объект Carey Barr]
 
-// /**
-//  * task -03
-//  * Получить массив имен пользователей по полу(поле gender).
-//  */
+/**
+ * task -03
+ * Получить массив имен пользователей по полу(поле gender).
+ */
 
 // const getUsersWithGender = (users, gender) => {
 //   const userGender = users.filter(user => user.gender === gender);
@@ -51,11 +51,11 @@ import users from './users.js';
  *
  */
 
-const getInactiveUsers = users => {
-  return users.filter(user => user.isActive === false);
-};
+// const getInactiveUsers = users => {
+//   return users.filter(user => user.isActive === false);
+// };
 
-console.log(getInactiveUsers(users));
+// console.log(getInactiveUsers(users));
 
 // [объект Moore Hensley, объект Ross Vazquez, объект Blackburn Dotson]
 
@@ -66,7 +66,7 @@ console.log(getInactiveUsers(users));
  */
 
 // const getUserWithEmail = (users, email) => {
-//     // твой код
+//   return users.find(user => user.email === email);
 // };
 
 // console.log(getUserWithEmail(users, 'shereeanthony@kog.com'));
