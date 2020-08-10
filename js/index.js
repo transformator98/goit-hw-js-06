@@ -35,14 +35,15 @@ console.log(getUsersWithEyeColor(users, 'blue'));
  * task -03
  * Получить массив имен пользователей по полу(поле gender).
  */
-//
 
-// const getUsersWithGender = (users, gender) => {
-//     // твой код
-// };
+const getUsersWithGender = (users, gender) => {
+  const userGender = users.filter(user => user.gender === gender);
+  return userGender.map(user => user.name);
+};
 
-// console.log(getUsersWithGender(users, 'male'));
-// // [ 'Moore Hensley', 'Ross Vazquez', 'Carey Barr', 'Blackburn Dotson' ]
+console.log(getUsersWithGender(users, 'male'));
+// [ 'Moore Hensley', 'Ross Vazquez', 'Carey Barr', 'Blackburn Dotson' ]
+
 /**
  * task -04
  */
