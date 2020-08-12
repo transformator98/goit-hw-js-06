@@ -157,7 +157,21 @@ console.groupEnd();
  */
 
 const getSortedUniqueSkills = users => {
-  // твой код
+  return users
+    .reduce(function (skills, user) {
+      // for (let i of user.skills) {
+      skills.push(...user.skills);
+      // console.log('i: ', i);
+      console.log('skills: ', skills);
+      console.log('user.skills: ', user.skills);
+
+      if (skills.includes(user.skills)) {
+        return skills;
+      }
+      // }
+      return skills;
+    }, [])
+    .sort();
 };
 console.group('task-10');
 console.log(getSortedUniqueSkills(users));
