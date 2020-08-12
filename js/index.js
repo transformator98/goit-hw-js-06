@@ -5,10 +5,11 @@ import users from './users.js';
  * Получить массив имен всех пользователей (поле name).
  */
 
-// const getUserNames = users => {
-//   return users.map(user => user.name);
-// };
-// console.log(getUserNames(users));
+const getUserNames = users => {
+  return users.map(user => user.name);
+};
+console.group('task-01');
+console.log(getUserNames(users));
 // [
 //   'Moore Hensley',
 //   'Sharlene Bush',
@@ -18,31 +19,33 @@ import users from './users.js';
 //   'Blackburn Dotson',
 //   'Sheree Anthony',
 // ];
+console.groupEnd();
 
 /**=============================================================
  * task -02
  * Получить массив объектов пользователей по цвету глаз (поле eyeColor).
  */
 
-// const getUsersWithEyeColor = (users, color) => {
-//   return users.filter(user => user.eyeColor === color);
-// };
-
-// console.log(getUsersWithEyeColor(users, 'blue'));
-// // [объект Moore Hensley, объект Sharlene Bush, объект Carey Barr]
-
+const getUsersWithEyeColor = (users, color) => {
+  return users.filter(user => user.eyeColor === color);
+};
+console.group('task-02');
+console.log(getUsersWithEyeColor(users, 'blue'));
+// [объект Moore Hensley, объект Sharlene Bush, объект Carey Barr]
+console.groupEnd();
 /**=============================================================
  * task -03
  * Получить массив имен пользователей по полу(поле gender).
  */
 
-// const getUsersWithGender = (users, gender) => {
-//   const userGender = users.filter(user => user.gender === gender);
-//   return userGender.map(user => user.name);
-// };
-
-// console.log(getUsersWithGender(users, 'male'));
-// // [ 'Moore Hensley', 'Ross Vazquez', 'Carey Barr', 'Blackburn Dotson' ]
+const getUsersWithGender = (users, gender) => {
+  const userGender = users.filter(user => user.gender === gender);
+  return userGender.map(user => user.name);
+};
+console.group('task-03');
+console.log(getUsersWithGender(users, 'male'));
+// [ 'Moore Hensley', 'Ross Vazquez', 'Carey Barr', 'Blackburn Dotson' ]
+console.groupEnd();
 
 /**=============================================================
  * task -04
@@ -51,13 +54,13 @@ import users from './users.js';
  *
  */
 
-// const getInactiveUsers = users => {
-//   return users.filter(user => user.isActive === false);
-// };
-
-// console.log(getInactiveUsers(users));
-
+const getInactiveUsers = users => {
+  return users.filter(user => user.isActive === false);
+};
+console.group('task-04');
+console.log(getInactiveUsers(users));
 // [объект Moore Hensley, объект Ross Vazquez, объект Blackburn Dotson]
+console.groupEnd();
 
 /**=============================================================
  * task -05
@@ -65,14 +68,15 @@ import users from './users.js';
  *
  */
 
-// const getUserWithEmail = (users, email) => {
-//   return users.find(user => user.email === email);
-// };
-
-// console.log(getUserWithEmail(users, 'shereeanthony@kog.com'));
-// // {объект пользователя Sheree Anthony}
-// console.log(getUserWithEmail(users, 'elmahead@omatom.com'));
-// // {объект пользователя Elma Head}
+const getUserWithEmail = (users, email) => {
+  return users.find(user => user.email === email);
+};
+console.group('task-05');
+console.log(getUserWithEmail(users, 'shereeanthony@kog.com'));
+// {объект пользователя Sheree Anthony}
+console.log(getUserWithEmail(users, 'elmahead@omatom.com'));
+// {объект пользователя Elma Head}
+console.groupEnd();
 
 /**=============================================================
  * task -06
@@ -81,40 +85,55 @@ import users from './users.js';
  *
  */
 
-// const getUsersWithAge = (users, min, max) => {
-//   return users.filter(user => user.age >= min && user.age <= max);
-// };
+const getUsersWithAge = (users, min, max) => {
+  return users.filter(user => user.age >= min && user.age <= max);
+};
+console.group('task-06');
+console.log(getUsersWithAge(users, 20, 30));
+// [объект Ross Vazquez, объект Elma Head, объект Carey Barr]
 
-// console.log(getUsersWithAge(users, 20, 30));
-// // [объект Ross Vazquez, объект Elma Head, объект Carey Barr]
-
-// console.log(getUsersWithAge(users, 30, 40));
-// // [объект Moore Hensley, объект Sharlene Bush, объект Blackburn Dotson, объект Sheree Anthony]
+console.log(getUsersWithAge(users, 30, 40));
+// [объект Moore Hensley, объект Sharlene Bush, объект Blackburn Dotson, объект Sheree Anthony]
+console.groupEnd();
 
 /**=============================================================
  * task -07
  * Получить общую сумму баланса (поле balance) всех пользователей.
  */
 
-// const calculateTotalBalance = users => {
-//   return users.reduce((totalBallance, user) => totalBallance + user.balance, 0);
-// };
-
-// console.log(calculateTotalBalance(users)); // 20916
+const calculateTotalBalance = users => {
+  return users.reduce((totalBallance, user) => totalBallance + user.balance, 0);
+};
+console.group('task-07');
+console.log(calculateTotalBalance(users)); // 20916
+console.groupEnd();
 
 /**=============================================================
  * task -08
  * Массив имен всех пользователей у которых есть друг с указанным именем.
  *
  */
+// ===========================================================
+// готово
 
-// const getUsersWithFriend = (users, friendName) => {
-//     // твой код
-// };
+const getUsersWithFriend = (users, friendName) => {
+  return users
+    .filter(function (user) {
+      for (let userFriend of user.friends) {
+        if (userFriend === friendName) {
+          return user;
+        }
+      }
+    })
+    .map(function (user) {
+      return user.name;
+    });
+};
 
-// console.log(getUsersWithFriend(users, 'Briana Decker')); // [ 'Sharlene Bush', 'Sheree Anthony' ]
-// console.log(getUsersWithFriend(users, 'Goldie Gentry')); // [ 'Elma Head', 'Sheree Anthony' ]
-
+console.group('task-08');
+console.log(getUsersWithFriend(users, 'Briana Decker')); // [ 'Sharlene Bush', 'Sheree Anthony' ]
+console.log(getUsersWithFriend(users, 'Goldie Gentry')); // [ 'Elma Head', 'Sheree Anthony' ]
+console.groupEnd();
 /**=============================================================
  * task -09
  * Массив имен (поле name) людей, отсортированных
@@ -124,10 +143,10 @@ import users from './users.js';
 // const getNamesSortedByFriendsCount = users => {
 //     // твой код
 // };
-
+//console.group('task-09')
 // console.log(getNamesSortedByFriendsCount(users));
 // // [ 'Moore Hensley', 'Sharlene Bush', 'Elma Head', 'Carey Barr', 'Blackburn Dotson', 'Sheree Anthony', 'Ross Vazquez' ]
-
+//console.groupEnd()
 /**=============================================================
  * task -10
  * Получить массив всех умений всех пользователей(поле skills), при этом не должно
@@ -137,6 +156,7 @@ import users from './users.js';
 // const getSortedUniqueSkills = users => {
 //     // твой код
 // };
-
+// console.group('task-10')
 // console.log(getSortedUniqueSkills(users));
 // // [ 'adipisicing', 'amet', 'anim', 'commodo', 'culpa', 'elit', 'ex', 'ipsum', 'irure', 'laborum', 'lorem', 'mollit', 'non', 'nostrud', 'nulla', 'proident', 'tempor', 'velit', 'veniam' ]
+// console.groupEnd()
