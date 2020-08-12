@@ -39,8 +39,7 @@ console.groupEnd();
  */
 
 const getUsersWithGender = (users, gender) => {
-  const userGender = users.filter(user => user.gender === gender);
-  return userGender.map(user => user.name);
+  return users.filter(user => user.gender === gender).map(user => user.name);
 };
 console.group('task-03');
 console.log(getUsersWithGender(users, 'male'));
@@ -125,9 +124,7 @@ const getUsersWithFriend = (users, friendName) => {
         }
       }
     })
-    .map(function (user) {
-      return user.name;
-    });
+    .map(user => user.name);
 };
 
 console.group('task-08');
@@ -140,13 +137,18 @@ console.groupEnd();
  * в зависимости от количества их друзей (поле friends)
  */
 
-// const getNamesSortedByFriendsCount = users => {
-//     // твой код
-// };
-//console.group('task-09')
-// console.log(getNamesSortedByFriendsCount(users));
-// // [ 'Moore Hensley', 'Sharlene Bush', 'Elma Head', 'Carey Barr', 'Blackburn Dotson', 'Sheree Anthony', 'Ross Vazquez' ]
-//console.groupEnd()
+const getNamesSortedByFriendsCount = users => {
+  return users
+    .sort(
+      (prevUser, nextUser) => prevUser.friends.length - nextUser.friends.length,
+    )
+    .map(user => user.name);
+};
+
+console.group('task-09');
+console.log(getNamesSortedByFriendsCount(users));
+// [ 'Moore Hensley', 'Sharlene Bush', 'Elma Head', 'Carey Barr', 'Blackburn Dotson', 'Sheree Anthony', 'Ross Vazquez' ]
+console.groupEnd();
 /**=============================================================
  * task -10
  * Получить массив всех умений всех пользователей(поле skills), при этом не должно
