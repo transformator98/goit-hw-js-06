@@ -112,18 +112,10 @@ console.groupEnd();
  * Массив имен всех пользователей у которых есть друг с указанным именем.
  *
  */
-// ===========================================================
-// готово
 
 const getUsersWithFriend = (users, friendName) => {
   return users
-    .filter(function (user) {
-      for (let userFriend of user.friends) {
-        if (userFriend === friendName) {
-          return user;
-        }
-      }
-    })
+    .filter(user => user.friends.includes(friendName))
     .map(user => user.name);
 };
 
@@ -168,6 +160,7 @@ const getSortedUniqueSkills = users => {
     }, [])
     .sort();
 };
+
 console.group('task-10');
 console.log(getSortedUniqueSkills(users));
 // [ 'adipisicing', 'amet', 'anim', 'commodo', 'culpa', 'elit', 'ex', 'ipsum', 'irure', 'laborum', 'lorem', 'mollit', 'non', 'nostrud', 'nulla', 'proident', 'tempor', 'velit', 'veniam' ]
