@@ -159,16 +159,11 @@ console.groupEnd();
 const getSortedUniqueSkills = users => {
   return users
     .reduce(function (skills, user) {
-      // for (let i of user.skills) {
-      skills.push(...user.skills);
-      // console.log('i: ', i);
-      console.log('skills: ', skills);
-      console.log('user.skills: ', user.skills);
-
-      if (skills.includes(user.skills)) {
-        return skills;
+      for (let i of user.skills) {
+        if (!skills.includes(i)) {
+          skills.push(i);
+        }
       }
-      // }
       return skills;
     }, [])
     .sort();
